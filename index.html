@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omotayo Olatomiwa Kolawole | AI/ML & Data Science</title>
+<meta name="description" content="Omotayo Olatomiwa Kolawole, Computer Science student at the University of Lagos working in AI/ML, data science and data analysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf6f0; --bg2:#f2ebe1; --card:#ffffff; --line:#e6dbcd;
+    --text:#2b2522; --muted:#6b615a; --accent:#b5562f; --accent2:#3d5a4f;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Source Sans 3",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:17px}
+  h1,h2,h3{font-family:Lora,Georgia,serif;line-height:1.2;font-weight:600}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:min(1100px,92%);margin:0 auto}
+  section{padding:96px 0}
+  .eyebrow{color:var(--accent);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+  .section-title{font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:40px}
+
+  /* Image placeholder when a file is missing */
+  .img-box{position:relative;overflow:hidden;background:#ece2d5;border-radius:var(--radius)}
+  .img-box img{width:100%;height:100%;object-fit:cover}
+  .img-box.missing::after{content:attr(data-name);position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:.85rem;font-family:monospace;text-align:center;padding:12px;border:2px dashed #cdbba6;border-radius:var(--radius)}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(250,246,240,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-family:Lora,serif;font-weight:700;font-size:1.3rem}
+  .logo span{color:var(--accent)}
+  .links{display:flex;gap:28px;font-size:.98rem;color:var(--muted);font-weight:500}
+  .links a:hover{color:var(--accent)}
+  .menu-btn{display:none;background:none;border:0;color:var(--text);font-size:1.6rem;cursor:pointer}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;font-weight:600;font-size:.97rem;transition:.2s}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:#9c4624;transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid var(--text);color:var(--text)}
+  .btn-ghost:hover{background:var(--text);color:var(--bg)}
+
+  /* Hero */
+  .hero{padding:80px 0 96px}
+  .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.4rem,5.5vw,3.9rem);margin-bottom:14px}
+  .hero h1 .hl{color:var(--accent);font-style:italic}
+  .role{font-size:1.15rem;color:var(--accent2);font-weight:600;margin-bottom:18px}
+  .hero p.lead{color:var(--muted);max-width:560px;margin-bottom:30px;font-size:1.1rem}
+  .cta{display:flex;flex-wrap:wrap;gap:14px}
+  .hero .portrait{aspect-ratio:4/5;box-shadow:18px 18px 0 var(--bg2), 18px 18px 0 1px var(--line)}
+  .portrait-wrap{position:relative}
+  .badge{position:absolute;left:-22px;bottom:28px;background:var(--card);border:1px solid var(--line);padding:12px 16px;border-radius:10px;font-size:.88rem;box-shadow:0 10px 30px rgba(60,40,20,.12)}
+  .badge b{display:block;color:var(--accent);font-family:Lora,serif;font-size:1rem}
+
+  /* About */
+  .about{background:var(--bg2)}
+  .about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+  .about .img-box{aspect-ratio:1/1}
+  .about p{color:var(--muted);margin-bottom:16px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;text-align:center}
+  .stat b{display:block;font-family:Lora,serif;font-size:1.8rem;color:var(--accent)}
+  .stat span{font-size:.85rem;color:var(--muted)}
+
+  /* Skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .skill-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;border-top:3px solid var(--accent)}
+  .skill-card h3{font-size:1.12rem;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .skill-card h3 i{font-style:normal;font-size:1.25rem}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-size:.84rem;padding:4px 12px;border-radius:999px;background:#edf1ee;color:var(--accent2);border:1px solid #d3ddd7}
+
+  /* Experience timeline */
+  .exp{background:var(--bg2)}
+  .timeline{position:relative;padding-left:30px;border-left:2px solid var(--line)}
+  .job{position:relative;margin-bottom:40px}
+  .job:last-child{margin-bottom:0}
+  .job::before{content:"";position:absolute;left:-39px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:4px solid var(--bg2)}
+  .job .when{font-size:.88rem;color:var(--accent);font-weight:600}
+  .job h3{font-size:1.3rem;margin:4px 0}
+  .job .org{color:var(--accent2);font-weight:600;margin-bottom:10px}
+  .job ul{color:var(--muted);padding-left:18px}
+  .job li{margin-bottom:6px}
+
+  /* Projects */
+  .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .project{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+  .project:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(60,40,20,.12)}
+  .project .img-box{aspect-ratio:16/9;border-radius:0}
+  .project .img-box.missing::after{border-radius:0}
+  .project .body{padding:24px;display:flex;flex-direction:column;flex:1}
+  .project h3{font-size:1.25rem;margin-bottom:10px}
+  .project p{color:var(--muted);font-size:.98rem;margin-bottom:16px;flex:1}
+  .project .tags{margin-bottom:18px}
+  .project .tag{background:#f8ece5;color:var(--accent);border-color:#efd5c7}
+  .project a.more{color:var(--accent);font-weight:600;font-size:.95rem}
+  .project a.more:hover{text-decoration:underline}
+
+  /* Education & certs */
+  .edu{background:var(--bg2)}
+  .edu-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px}
+  .edu-item{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;margin-bottom:14px}
+  .edu-item h3{font-size:1.08rem}
+  .edu-item span{color:var(--muted);font-size:.92rem}
+  .certs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .cert{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:.92rem}
+  .cert b{display:block;font-weight:600;margin-bottom:2px}
+  .cert span{color:var(--muted);font-size:.84rem}
+  .cert em{font-style:normal;font-weight:600}
+  .cert .done{color:var(--accent2)}
+  .cert .prog{color:var(--accent)}
+  h3.sub{font-size:1.25rem;margin-bottom:18px}
+
+  /* Community */
+  .community-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .vol{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .vol .img-box{aspect-ratio:4/3;border-radius:0}
+  .vol .img-box.missing::after{border-radius:0}
+  .vol .body{padding:18px}
+  .vol h3{font-size:1.02rem;margin-bottom:4px}
+  .vol .when{font-size:.82rem;color:var(--accent);margin-bottom:8px;font-weight:600}
+  .vol p{font-size:.9rem;color:var(--muted)}
+
+  /* Contact */
+  .contact{text-align:center;background:var(--text);color:var(--bg)}
+  .contact .section-title{color:#fff}
+  .contact p{color:#cfc5bb;max-width:560px;margin:0 auto 32px}
+  .contact .btn-ghost{border-color:#cfc5bb;color:#fff}
+  .contact .btn-ghost:hover{background:#fff;color:var(--text)}
+  .contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:18px}
+  .langs{color:#cfc5bb;font-size:.92rem;margin-top:24px}
+  footer{background:var(--text);border-top:1px solid #4a423d;padding:26px 0;text-align:center;color:#a99e94;font-size:.88rem}
+
+  /* Reveal on scroll */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.show{opacity:1;transform:none}
+
+  @media (max-width:900px){
+    .hero .wrap,.about .wrap,.edu-grid{grid-template-columns:1fr}
+    .hero .portrait-wrap{max-width:360px;margin:0 auto;order:-1}
+    .skills-grid{grid-template-columns:1fr 1fr}
+    .community-grid{grid-template-columns:1fr 1fr}
+    .links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line)}
+    .links.open{display:flex}
+    .links a{padding:14px 4%}
+    .menu-btn{display:block}
+  }
+  @media (max-width:600px){
+    section{padding:72px 0}
+    .skills-grid,.projects-grid,.community-grid,.certs{grid-template-columns:1fr}
+    .badge{left:10px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#home" class="logo">Omotayo<span>.</span></a>
+    <div class="links" id="links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Hello, I'm</div>
+      <h1>Omotayo Olatomiwa <span class="hl">Kolawole</span></h1>
+      <div class="role">Computer Science Undergraduate · AI/ML &amp; Data Science</div>
+      <p class="lead">I turn raw data into clear insight. I've built credit-scoring models, RAG systems, AI hiring tools and KPI data models as an AI/ML Intern at Credlanche Limited, and I'm finishing my Computer Science degree at the University of Lagos.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#projects">View my work →</a>
+        <a class="btn btn-ghost" href="Omotayo_Kolawole_CV.pdf" download>Download CV</a>
+        <a class="btn btn-ghost" href="https://github.com/tayo-omg" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="portrait-wrap">
+      <div class="img-box portrait" data-name="images/profile.jpg">
+        <img src="images/profile.jpg" alt="Portrait of Omotayo Olatomiwa Kolawole">
+      </div>
+      <div class="badge"><b>Open to work</b>Data Science · ML · AI</div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="img-box reveal" data-name="images/about.jpg">
+      <img src="images/about.jpg" alt="Omotayo working">
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">About me</div>
+      <h2 class="section-title">Curious about data, driven by impact</h2>
+      <p>I'm a final-year Computer Science student at the University of Lagos with hands-on experience in data science, data analysis, machine learning and web development. Through my internship at Credlanche Limited I worked on credit scoring, RAG, LLM evaluation and KPI design. I've also built models on different datasets, cleaned, optimised and visualised data for insight, and developed websites for businesses.</p>
+      <p>Outside the classroom, I volunteer with the AWS Community and Data Science Nigeria at UNILAG, helping students discover cloud and data careers. I'm passionate, collaborative and always open to learning something new.</p>
+      <div class="stats">
+        <div class="stat"><b>10+</b><span>Courses &amp; certifications</span></div>
+        <div class="stat"><b>2</b><span>Industry internships</span></div>
+        <div class="stat"><b>3</b><span>Languages spoken</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">What I work with</div>
+    <h2 class="section-title">Skills &amp; tools</h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h3><i>📊</i> Data &amp; Machine Learning</h3>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Data Cleaning</span><span class="tag">EDA</span><span class="tag">Classification</span><span class="tag">Data Visualisation</span><span class="tag">Excel</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><i>🤖</i> AI Development</h3>
+        <div class="tags"><span class="tag">RAG</span><span class="tag">LLM-as-a-Judge</span><span class="tag">Agentic AI</span><span class="tag">KPI Design</span><span class="tag">API Endpoints</span><span class="tag">Deep Learning (learning)</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><i>🗄️</i> Databases</h3>
+        <div class="tags"><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">Data Modelling</span><span class="tag">Power BI</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><i>🌐</i> Web Development</h3>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">Netlify</span><span class="tag">Vercel</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><i>🛠️</i> Tools</h3>
+        <div class="tags"><span class="tag">Git / GitHub</span><span class="tag">Jupyter</span><span class="tag">Google Colab</span><span class="tag">Power BI</span><span class="tag">Tableau</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><i>🤝</i> Soft Skills</h3>
+        <div class="tags"><span class="tag">Communication</span><span class="tag">Creativity</span><span class="tag">Prioritisation</span><span class="tag">Collaboration</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp" id="experience">
+  <div class="wrap">
+    <div class="eyebrow">Where I've worked</div>
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+      <div class="job reveal">
+        <div class="when">May 2026 – Oct 2026</div>
+        <h3>AI/ML Intern</h3>
+        <div class="org">Credlanche Limited</div>
+        <ul>
+          <li>Researched credit-scoring methods, then built and evaluated a credit-score prediction model.</li>
+          <li>Developed a Retrieval-Augmented Generation (RAG) system that grounds language-model answers in company information.</li>
+          <li>Researched TrailBlazers Insurance Brokers and insurance quotation processes to support product planning.</li>
+          <li>Designed KPI metrics and the underlying data model for DigitWrap, turning transaction data into business-performance insights.</li>
+          <li>Built two AI features for CredHR: automated job-description generation and a CV-based interview-question generator.</li>
+          <li>Evaluated the quality of AI-generated outputs using an LLM-as-a-Judge approach.</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="when">Aug 2024 – Oct 2024</div>
+        <h3>Product Manager (Intern)</h3>
+        <div class="org">Darum Logistics</div>
+        <ul>
+          <li>Supported planning (KPIs/APIs) and coordination of logistics and event operations with the tech teams.</li>
+          <li>Contributed content ideas and helped execute content plans for visibility.</li>
+          <li>Collaborated with cross-functional teams to support delivery and execution quality.</li>
+        </ul>
+      </div>
+      <div class="job reveal">
+        <div class="when">Nov 2019 – Present</div>
+        <h3>Secretary</h3>
+        <div class="org">Kolawole &amp; Co. Legal Practitioners</div>
+        <ul>
+          <li>Managed confidential documents, record keeping and administrative workflows.</li>
+          <li>Scheduled meetings and appointments and kept accurate documentation for office operations.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">Selected work</div>
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+
+      <!-- PROJECT 1: replace the link below with your credit scoring repo (or delete the <a> line if it's private company work) -->
+      <article class="project reveal">
+        <div class="img-box" data-name="images/project-credit-scoring.jpg">
+          <img src="images/project-credit-scoring.jpg" alt="Credit-score prediction project">
+        </div>
+        <div class="body">
+          <h3>Credit-Score Prediction Model</h3>
+          <p>Researched credit-scoring approaches, then built and evaluated a machine-learning model that predicts credit scores to support lending decisions. Built during my AI/ML internship at Credlanche Limited.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Fintech</span></div>
+          <a class="more" href="https://github.com/tayo-omg" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 2: replace the link below with your Product-Store Sales Prediction repo -->
+      <article class="project reveal">
+        <div class="img-box" data-name="images/project-sales-prediction.jpg">
+          <img src="images/project-sales-prediction.jpg" alt="Product-store sales prediction project">
+        </div>
+        <div class="body">
+          <h3>Product-Store Sales Prediction</h3>
+          <p>Built a regression model to predict product sales across stores as part of the Data Science Nigeria (DSN) bootcamp, covering data cleaning, feature engineering, model training and evaluation.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Regression</span></div>
+          <a class="more" href="https://github.com/tayo-omg" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 3: replace the link below with your EDA repo -->
+      <article class="project reveal">
+        <div class="img-box" data-name="images/project-eda.jpg">
+          <img src="images/project-eda.jpg" alt="Dataset cleaning and visualisation project">
+        </div>
+        <div class="body">
+          <h3>Dataset Cleaning &amp; Visualisation (EDA)</h3>
+          <p>Cleaned a raw dataset and built visualisations that communicate patterns and insights, producing charts and summary findings for decision-making and reporting.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Excel</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span></div>
+          <a class="more" href="https://github.com/tayo-omg" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </article>
+
+      <!-- PROJECT 4: live site -->
+      <article class="project reveal">
+        <div class="img-box" data-name="images/project-tiffs-website.jpg">
+          <img src="images/project-tiffs-website.jpg" alt="TIFFS lip care online store">
+        </div>
+        <div class="body">
+          <h3>TIFFS: Online Store for a Lip Care Brand</h3>
+          <p>Built the e-commerce site for TIFFS, a Lagos lip care brand: a product catalogue with category filters, bundle deals, a cart with running totals and a two-step checkout that hands orders over to WhatsApp for delivery. Mobile-first design.</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Netlify</span></div>
+          <a class="more" href="https://tiffs.netlify.app/" target="_blank" rel="noopener">Visit live site →</a>
+        </div>
+      </article>
+
+    </div>
+    <p style="color:var(--muted);margin-top:28px;text-align:center">Also: cleaning service website, SWSIS (website), marketing campaign ML analysis. <a href="https://github.com/tayo-omg" target="_blank" rel="noopener" style="color:var(--accent2)">See more on GitHub →</a></p>
+  </div>
+</section>
+
+<!-- EDUCATION & CERTS -->
+<section class="edu" id="education">
+  <div class="wrap">
+    <div class="eyebrow">Learning</div>
+    <h2 class="section-title">Education &amp; certifications</h2>
+    <div class="edu-grid">
+      <div class="reveal">
+        <h3 class="sub">Education</h3>
+        <div class="edu-item"><h3>B.Sc. Computer Science</h3><span>University of Lagos · 2023 – Present</span></div>
+        <div class="edu-item"><h3>Foundation Programme</h3><span>University of Lagos · 2022 – 2023</span></div>
+        <div class="edu-item"><h3>SSCE</h3><span>Somerset College · 2015 – 2021</span></div>
+      </div>
+      <div class="reveal">
+        <h3 class="sub">Certifications &amp; training</h3>
+        <div class="certs">
+          <div class="cert"><b>AWS AI Practitioner Learning Plan</b><span>AWS Training · <em class="prog">In progress</em></span></div>
+          <div class="cert"><b>AWS AI Practitioner Challenge</b><span>Udacity × AWS · <em class="done">Jun 2026</em></span></div>
+          <div class="cert"><b>Unsupervised Learning Methods</b><span>IBM SkillsBuild · <em class="done">Jul 2026</em></span></div>
+          <div class="cert"><b>Data Science Programme</b><span>TS Academy · <em class="done">Jul 2026</em></span></div>
+          <div class="cert"><b>AI/ML Essentials</b><span>ECX · <em class="done">Jul 2026</em></span></div>
+          <div class="cert"><b>Data Analysis &amp; Data Science (Python)</b><span>DataCamp · <em class="done">Completed</em></span></div>
+          <div class="cert"><b>AI Security &amp; Risk Management</b><span>DataCamp · <em class="done">Feb 2025</em></span></div>
+          <div class="cert"><b>Understanding Machine Learning</b><span>DataCamp · <em class="done">Mar 2025</em></span></div>
+          <div class="cert"><b>Understanding Data Science</b><span>DataCamp · <em class="done">Apr 2024</em></span></div>
+          <div class="cert"><b>Data Analysis Training</b><span>HNG · <em class="done">Completed</em></span></div>
+          <div class="cert"><b>Data Science, ML &amp; AI</b><span>Udemy · <em class="prog">In progress</em></span></div>
+          <div class="cert"><b>FSI/MWB Training Programme</b><span>FSI · <em class="prog">In progress</em></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community">
+  <div class="wrap">
+    <div class="eyebrow">Giving back</div>
+    <h2 class="section-title">Community &amp; volunteering</h2>
+    <div class="community-grid">
+      <div class="vol reveal">
+        <div class="img-box" data-name="images/volunteer-aws.jpg"><img src="images/volunteer-aws.jpg" alt="AWS Community UNILAG"></div>
+        <div class="body"><h3>AWS Community, UNILAG</h3><div class="when">Jun 2025 – Present</div><p>Support operations and event planning to grow student awareness of AWS and cloud learning paths.</p></div>
+      </div>
+      <div class="vol reveal">
+        <div class="img-box" data-name="images/volunteer-dsn.jpg"><img src="images/volunteer-dsn.jpg" alt="Data Science Nigeria UNILAG"></div>
+        <div class="body"><h3>Data Science Nigeria, UNILAG</h3><div class="when">Jan 2026 – Present</div><p>Build awareness of data science on campus and help host hands-on workshops for students.</p></div>
+      </div>
+      <div class="vol reveal">
+        <div class="img-box" data-name="images/volunteer-build54.jpg"><img src="images/volunteer-build54.jpg" alt="Build54 event"></div>
+        <div class="body"><h3>Build54</h3><div class="when">2026</div><p>Welfare and hospitality volunteer, helping create a welcoming, well-coordinated event.</p></div>
+      </div>
+      <div class="vol reveal">
+        <div class="img-box" data-name="images/volunteer-hazel.jpg"><img src="images/volunteer-hazel.jpg" alt="Hazel Charity Organisation outreach"></div>
+        <div class="body"><h3>Hazel Charity Organisation</h3><div class="when">Mar 2021 – Present</div><p>Support planning and organise resources for outreach activities.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get in touch</div>
+    <h2 class="section-title" style="margin-bottom:16px">Let's work together</h2>
+    <p>I'm open to internships, graduate roles and paid opportunities in data science, data analysis, machine learning and AI. I'd love to hear from you.</p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:omotayokolawole68@gmail.com">✉ omotayokolawole68@gmail.com</a>
+      <a class="btn btn-ghost" href="tel:+2349018311904">☎ +234 901 831 1904</a>
+    </div>
+    <div class="contact-links">
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/omotayo-kolawole-aa5a3a2a5" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/tayo-omg" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-ghost" href="Omotayo_Kolawole_CV.pdf" download>Download CV</a>
+    </div>
+    <div class="langs">Languages: English · Yoruba · French</div>
+  </div>
+</section>
+
+<footer>© <span id="year"></span> Omotayo Olatomiwa Kolawole · Lagos, Nigeria</footer>
+
+<script>
+  // Show the expected file name if an image hasn't been added yet
+  document.querySelectorAll('.img-box img').forEach(img => {
+    const mark = () => { img.style.display = 'none'; img.parentElement.classList.add('missing'); };
+    if (img.complete && img.naturalWidth === 0) mark();
+    img.addEventListener('error', mark);
+  });
+
+  // Mobile menu
+  const links = document.getElementById('links');
+  document.getElementById('menuBtn').addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
